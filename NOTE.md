@@ -30,8 +30,8 @@ Reader's output: Lisp object(s-expression)
 
 The evaluator defines a syntax of Lisp forms that can be build out of s-expressions.
 
-(foo 1 2)     ; s-expression even also form
-("foo" 1 2)   ; s-expression but not form
+    (foo 1 2)     ; s-expression even also form
+    ("foo" 1 2)   ; s-expression but not form
 
 reader , s-expression
  : a normal s-expression can be interpreted by a reader.
@@ -50,8 +50,13 @@ number, string, list.
 if I enter (1 2) into REPL, there is an error.
 why?
 (1 2) is a list. but not a form.
+
+    > (1 2)
+    EVAL: 1 is not a function name; try using a symbol instead
+
 which means, (1 2) couldn't be evaluated.
 what's rule?
+
 
 {elements} can be s-expressions, which is atoms or lsits.
 
