@@ -41,3 +41,15 @@ Some examples
 
 What returned text means? Why it is upper case always? What happend when I define a function?
 To know this, we have to know how REPL deals with symbols.
+
+
+# Function as a Data
+    CL-USER> 'foo
+    FOO
+    CL-USER> 'Print-Hello
+    PRINT-HELLO
+
+A quoted symbol is dealt by a data.
+
+    CL-USER> (defun foo () (write "foo"))
+    FOO

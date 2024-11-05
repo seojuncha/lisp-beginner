@@ -11,7 +11,7 @@ I think, almost things in Lisp are s-expressions.(Not all? I'm not sure yet). Ho
 
 Not important which is s-expression, however we must know what it is to read and understand various documents.
 
-The s-expression stands for "Symbolc Expression". It consists of ***atoms*** and ***lists***.
+The s-expression stands for "Symbolic Expression". It consists of ***atoms*** and ***lists***.
 What is atoms and what is the lists? 
 
 Kinds of atoms
@@ -40,28 +40,33 @@ https://www.lispworks.com/documentation/HyperSpec/Front/X_AllSym.htm
 string s-expressions
 
     ;; "hello" can be evaluated. It is valid s-expressions and forms.
-    > "hello"
+    CL-USER> "hello"
     "hello"
 
-    > hello
+    CL-USER> hello
     SYSTEM::READ-EVAL-PRINT: variable HELLO has no value
 
 
 number s-expressions
 
     ;; 42 is a self-eveluating object.
-    > 42
+    CL-USER> 42
     42
 
 list s-expressions
 
-    > ()
+    CL-USER> ()
     NIL
 
     ;; (1 2) is a s-expression, but is not a form because it is not evaluted.
-    > (1 2)
+    CL-USER> (1 2)
     EVAL: 1 is not a function name; try using a symbol instead
 
     ;; It is a s-expression. The list, (+ 1 2) starts with a symbol, +.
-    > (+ 1 2)
+    CL-USER> (+ 1 2)
     3
+
+
+# Legal List expression.
+Think about below examples.
+
