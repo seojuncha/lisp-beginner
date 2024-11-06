@@ -5,23 +5,56 @@ Things must known.
 - which symbol is used?
 - Variouse way to assign value into a variable.
 
+Common Lisp's variable is both of dynamiced-type and strongly-typed also. 
 
-# Special Operator: LET
+
+# Binding
+Binding is assiciation between a variable name and a value.
+
+## Lexical and Dynamic
+Two types of Common Lisp variable binding.
+- Lexical(static) binding
+- Dynamic(spacial) binding
+
+## Lexical binding
+
+Lexical binding is similar with a local variable in other programming langues. Dynamic binding is similar with a global variable. Both of them are concerned with a variable life cycle and the access scope.
+
+Common use case of lexical binding is a function parameter. The parameters is given arguments' value and store it into parameter variables.
+
+    (defun foo (a b)
+      (write a))
+
+    (foo 1 2)
+    (write a)
+
+The paramter, leical bounded in the funciton FOO, **a** is a variable that might store the number atom, 1. However, the variable **a** is bounded to the function block. As a result, the last form, (write a), cannot be evaluated since the variable **a** is not accesible.
+
+
+## Special Operator: LET
 Syntax: 
 
 > (let (variables*) body-forms*)
 
-    CL-USER> (let ((a 10) (b 3)) (format t "a: ~d, b: ~d ~%" a b))
-    a: 10, b: 3
+    CL-USER> (let ((a 10) (b 3) c) (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
+    a: 10, b: 3, c: NIL
     NIL
 
-    (let ((a 10) (b 3)) 
-      (format t "a: ~d, b: ~d ~%" a b))
+    (let ((a 10) (b 3) c) 
+      (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
 
-variables* : (a 10) (b 3)<br>
+variables* : (a 10) (b 3) c<br>
 body-forms* : (format t "a: ~d, b: ~d ~%" a b)<br>
 
-# Shadowing
+a and b are function parameters of LET
+
+## Shadowing
+
+## Dynamic binding
+Dynamic binding is similar with a global variable in other programming language. It can be accessed and modified across functions or blocks.
+
+## defvar and defparameter
+Note that, the asterisks are 감싸다 to a variable name, For example, \*global-var\*.
 
 
 # Assigning

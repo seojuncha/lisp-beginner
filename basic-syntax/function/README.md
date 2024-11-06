@@ -53,3 +53,6 @@ A quoted symbol is dealt by a data.
 
     CL-USER> (defun foo () (write "foo"))
     FOO
+
+
+# Built-in Functions
