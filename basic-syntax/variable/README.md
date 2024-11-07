@@ -8,15 +8,15 @@ Things must known.
 Common Lisp's variable is both of dynamiced-type and strongly-typed also. 
 
 
-# Binding
+## Binding
 Binding is assiciation between a variable name and a value.
 
-## Lexical and Dynamic
+### Lexical and Dynamic
 Two types of Common Lisp variable binding.
 - Lexical(static) binding
 - Dynamic(spacial) binding
 
-## Lexical binding
+### Lexical binding
 
 Lexical binding is similar with a local variable in other programming langues. Dynamic binding is similar with a global variable. Both of them are concerned with a variable life cycle and the access scope.
 
@@ -33,7 +33,7 @@ Common use case of lexical binding is a function parameter. The parameters is gi
 The paramter, leical bounded in the funciton FOO, **a** is a variable that might store the number atom, 1. However, the variable **a** is bounded to the function block. As a result, the last form, (write a), cannot be evaluated since the variable **a** is not accesible.
 
 
-## Special Operator: LET
+### Special Operator: LET
 Syntax: 
 
 > (let (variables*) body-forms*)
@@ -57,9 +57,15 @@ a and b are function parameters of LET
 ## Dynamic binding
 Dynamic binding is similar with a global variable in other programming language. It can be accessed and modified across functions or blocks.
 
-## defvar and defparameter
+### defvar and defparameter
 Note that, the asterisks are 감싸다 to a variable name, For example, \*global-var\*.
 
 
-# Assigning
-setf vs setq
+## Assignment
+There are two symbols to assign a value to a variable, setq and setf. What's difference between them?
+
+> (setf place newvalue)
+
+*setf* is macro that can be expanded to *setq* if a *palce* is a variable. So what's the place means? 
+The place is just a place avaialable to store a value, which might be object. 
+The *place* includes a variable, but not viceverse. *setf* would be used in most cases.
