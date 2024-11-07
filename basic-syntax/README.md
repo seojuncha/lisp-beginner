@@ -33,40 +33,46 @@ ALl of them have a simple rule. If it is enclsed by parenthesis, which is a list
 # symbols
 Does it have a name? Great. It's a symbol!
 Tour of symbols in Common Lisp.
-https://www.lispworks.com/documentation/HyperSpec/Front/X_AllSym.htm
+
 
 # Examples
 
 string s-expressions
+```lisp
+;; "hello" can be evaluated. It is valid s-expressions and forms.
+CL-USER> "hello"
+"hello"
 
-    ;; "hello" can be evaluated. It is valid s-expressions and forms.
-    CL-USER> "hello"
-    "hello"
+CL-USER> hello
+SYSTEM::READ-EVAL-PRINT: variable HELLO has no value
+```
 
-    CL-USER> hello
-    SYSTEM::READ-EVAL-PRINT: variable HELLO has no value
 
 
 number s-expressions
-
-    ;; 42 is a self-eveluating object.
-    CL-USER> 42
-    42
+```lisp
+;; 42 is a self-eveluating object.
+CL-USER> 42
+42
+```
 
 list s-expressions
+```lisp
+CL-USER> ()
+NIL
 
-    CL-USER> ()
-    NIL
+;; (1 2) is a s-expression, but is not a form because it is not evaluted.
+CL-USER> (1 2)
+EVAL: 1 is not a function name        ; try using a symbol instead
 
-    ;; (1 2) is a s-expression, but is not a form because it is not evaluted.
-    CL-USER> (1 2)
-    EVAL: 1 is not a function name; try using a symbol instead
-
-    ;; It is a s-expression. The list, (+ 1 2) starts with a symbol, +.
-    CL-USER> (+ 1 2)
-    3
-
+;; It is a s-expression. The list, (+ 1 2) starts with a symbol, +.
+CL-USER> (+ 1 2)
+3
+```
 
 # Legal List expression.
 Think about below examples.
 
+
+# Resources
+https://www.lispworks.com/documentation/HyperSpec/Front/X_AllSym.htm

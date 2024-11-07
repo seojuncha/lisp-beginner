@@ -11,11 +11,13 @@ Note that, 'defun' is a built-in Lisp macro to define a function.
 '*' means that the number of parameter can be greater than or equal to one.
 For example, 
 
-    CL-USER> (list 1)  ; use one parameter, 1.
-    (1)
+```lisp
+CL-USER> (list 1)  ; use one parameter, 1.
+(1)
 
-    CL-USER> (list 1 2) ; use two parameters, 1, 2.
-    (1 2)
+CL-USER> (list 1 2) ; use two parameters, 1, 2.
+(1 2)
+```
 
 ## body-form*
 All forms in body-form are evaluted, then the last form is returned unless there is 'return-from' before the last form.
@@ -25,34 +27,41 @@ String literal to describe what is this function.
 
 Some examples
 
-    (defun plus (a b)                     ; a and b are parameters.
-    "This is simple plus function"        ; okay, this is what is this doing.
-      (+ a b))                            ; 
+```lisp
+(defun plus (a b)                     ; a and b are parameters.
+    "This is simple plus function"    ; okay, this is what is this doing.
+    (+ a b))                          ; 
 
-    (plus 1 2)          ; call a function, plus with arguments, 1 and 2.
+(plus 1 2)          ; call a function, plus with arguments, 1 and 2.
+```
+
 
 
 ## Define a function in REPL.
-    CL-USER> (defun foo () (format t "it is foo"))
-    FOO
+```lisp
+CL-USER> (defun foo () (format t "it is foo"))
+FOO
 
-    CL-USER> (defun foo-foo () (format t "two foo"))
-    FOO-FOO
+CL-USER> (defun foo-foo () (format t "two foo"))
+FOO-FOO
+```
 
 What returned text means? Why it is upper case always? What happend when I define a function?
 To know this, we have to know how REPL deals with symbols.
 
 
 # Function as a Data
-    CL-USER> 'foo
-    FOO
-    CL-USER> 'Print-Hello
-    PRINT-HELLO
+```lisp
+CL-USER> 'foo
+FOO
+CL-USER> 'Print-Hello
+PRINT-HELLO
+```
 
 A quoted symbol is dealt by a data.
-
-    CL-USER> (defun foo () (write "foo"))
-    FOO
-
+```lisp
+CL-USER> (defun foo () (write "foo"))
+FOO
+```
 
 # Built-in Functions

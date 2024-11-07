@@ -22,11 +22,13 @@ Lexical binding is similar with a local variable in other programming langues. D
 
 Common use case of lexical binding is a function parameter. The parameters is given arguments' value and store it into parameter variables.
 
-    (defun foo (a b)
-      (write a))
+```lisp
+(defun foo (a b)
+  (write a))
 
-    (foo 1 2)
-    (write a)
+(foo 1 2)
+(write a)
+```
 
 The paramter, leical bounded in the funciton FOO, **a** is a variable that might store the number atom, 1. However, the variable **a** is bounded to the function block. As a result, the last form, (write a), cannot be evaluated since the variable **a** is not accesible.
 
@@ -36,9 +38,11 @@ Syntax:
 
 > (let (variables*) body-forms*)
 
-    CL-USER> (let ((a 10) (b 3) c) (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
-    a: 10, b: 3, c: NIL
-    NIL
+```lisp
+CL-USER> (let ((a 10) (b 3) c) (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
+a: 10, b: 3, c: NIL
+NIL
+```
 
     (let ((a 10) (b 3) c) 
       (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
