@@ -75,4 +75,5 @@ Think about below examples.
 
 
 # Resources
-https://www.lispworks.com/documentation/HyperSpec/Front/X_AllSym.htm
+https://www.lispworks.com/documentation/HyperSpec/Front/X_AllSym.htm  
+https://gigamonkeys.com/book/
