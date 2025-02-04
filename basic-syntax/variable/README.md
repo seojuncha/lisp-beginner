@@ -33,24 +33,29 @@ Common use case of lexical binding is a function parameter. The parameters is gi
 The paramter, leical bounded in the funciton FOO, **a** is a variable that might store the number atom, 1. However, the variable **a** is bounded to the function block. As a result, the last form, (write a), cannot be evaluated since the variable **a** is not accesible.
 
 
-### Special Operator: LET
-Syntax: 
-
-> (let (variables*) body-forms*)
+### Special Operator: LET and LET*
+- syntax
+  - **let** ({var | (var [init-form])}*) declaration* form* => result*
+  - **let\*** ({var | (var [init-form])}*) declaration* form* => result*
 
 ```lisp
-CL-USER> (let ((a 10) (b 3) c) (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
-a: 10, b: 3, c: NIL
-NIL
+(let ((a 10) (b 3) c) 
+  (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
+;; => a: 10, b: 3, c: NIL
 ```
-
-    (let ((a 10) (b 3) c) 
-      (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
 
 variables* : (a 10) (b 3) c<br>
 body-forms* : (format t "a: ~d, b: ~d ~%" a b)<br>
 
 a and b are function parameters of LET
+
+```lisp
+(let ((a 10) (b (+ a 3)) c) 
+  (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
+;; error!! so,
+(let* ((a 10) (b (+ a 3)) c) 
+  (format t "a: ~d, b: ~d, c: ~d ~%" a b c))
+```
 
 ## Shadowing
 
@@ -58,14 +63,20 @@ a and b are function parameters of LET
 Dynamic binding is similar with a global variable in other programming language. It can be accessed and modified across functions or blocks.
 
 ### defvar and defparameter
-Note that, the asterisks are 감싸다 to a variable name, For example, \*global-var\*.
+
+```lisp
+(defvar *var-data*)  ;; legal
+(defparameter *var-data*)  ;; illegal, initialization value is needed.
+(defparameter *var-data* 0)
+```
 
 
 ## Assignment
-There are two symbols to assign a value to a variable, setq and setf. What's difference between them?
+There are two symbols to assign a value to a variable, `setq` and `setf`. What's difference between them?
 
 > (setf place newvalue)
 
 *setf* is macro that can be expanded to *setq* if a *palce* is a variable. So what's the place means? 
 The place is just a place avaialable to store a value, which might be object. 
 The *place* includes a variable, but not viceverse. *setf* would be used in most cases.
+

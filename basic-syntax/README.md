@@ -74,6 +74,37 @@ CL-USER> (+ 1 2)
 Think about below examples.
 
 
+# Evaluation
+## ' (single forward quote)
+```lisp
+(1 2 3)  ;; Invalid
+'(1 2 3) ;; Valid
+```
+
+## ` (back quote)
+```lisp
+`(1 2 3)
+;; (1 2 3)
+(list 1 2 3)
+;; => (1 2 3)
+`(list 1 2 3)
+;; => (LIST 1 2 3)
+`(list 1 2 3 ,(list 1 2))  ;; expression preceded by comma is evaluated!
+(LIST 1 2 3 (1 2))
+```
+
+# Condition
+## IF
+```lisp
+(if t '("true") '("false"))
+;; => ("true")
+(if nil '("true") '("false"))
+;; => ("false")
+(if t (list 1 2))
+;; => (1 2)
+```
+
+
 # Resources
 https://www.lispworks.com/documentation/HyperSpec/Front/X_AllSym.htm  
 https://gigamonkeys.com/book/

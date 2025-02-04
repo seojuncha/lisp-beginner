@@ -7,7 +7,8 @@ TODO
 - Compare those things with C++ or Python.
 - Add examples to prove that Lisp syntax being in here is correct by using REPL.
 
-# Reader and Evaluator
+
+
 ## Langauge processor
 The language processor works in the most language
 
@@ -38,6 +39,13 @@ reader , s-expression
 evaluator , form
  : a normal form can be interpreted by an evaluator.
 
+# Reader and Evaluator
+The reader
+- defines how strings of characters can be translated into Lisp objects called ***s-expressions***
+- 
+The evaluator
+- defines a syntax of Lisp ***forms*** that can be built out of *s-expressions*
+
 
 # s-expressions, forms, symbols
 Basic elements
@@ -51,15 +59,15 @@ if I enter (1 2) into REPL, there is an error.
 why?
 (1 2) is a list. but not a form.
 
-    > (1 2)
-    EVAL: 1 is not a function name; try using a symbol instead
+```shell
+> (1 2)
+EVAL: 1 is not a function name; try using a symbol instead
+```
 
 which means, (1 2) couldn't be evaluated.
 what's rule?
 
-
 {elements} can be s-expressions, which is atoms or lsits.
-
 
 symbols
 - Names used in Lisp programs.

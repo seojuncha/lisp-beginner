@@ -1,15 +1,34 @@
 # File I/O
 
-## with-open-file
+### with-open-file
 - type
   - macro
 - syntax
-  - **with-open-file** (stream filespec options*) declaration* form*
-=> results
+  - **with-open-file** (stream filespec options*) declaration* form* => ***results***
 
+```lisp
 
+```
 
-### Write
+### open
+- syntax
+  - **open** filespec *&key direction element-type if-exists if-does-not-exist external-format* => ***stream***
+
+```lisp
+(setf instream (open "my-file-path"))  ;; instream is a Lisp stream object
+
+```
+
+### close
+- syntax
+  - **close** stream *&key abort* => ***result***
+
+```lisp
+(close instream)
+
+```
+
+### write
 ```lisp
 ;; stream object = out
 (with-open-file (out "testfile" :direction :output) 

@@ -50,6 +50,8 @@ What returned text means? Why it is upper case always? What happend when I defin
 To know this, we have to know how REPL deals with symbols.
 
 
+
+
 # Function as a Data
 ```lisp
 CL-USER> 'foo
@@ -60,8 +62,24 @@ PRINT-HELLO
 
 A quoted symbol is dealt by a data.
 ```lisp
-CL-USER> (defun foo () (write "foo"))
-FOO
+(defun foo () (list 1 2))
+;; => FOO
+
+(function foo)
+;; => #<FUNCTION FOO NIL (DECLARE (SYSTEM::IN-DEFUN FOO)) (BLOCK FOO (LIST 1 2))>
+;; is same with below
+#'foo
+
+(funcall #'foo)
+;; call a function
 ```
 
-# Built-in Functions
+# Lambda Function
+
+```lisp
+(lambda (x y) (list x y))
+;; => #<FUNCTION :LAMBDA (X Y) (LIST X Y)>
+(funcall #'(lambda (x y) (list x y)) 'a 'b)
+;; => (A B)
+
+```

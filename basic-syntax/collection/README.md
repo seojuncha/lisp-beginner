@@ -2,16 +2,19 @@
 There are two types of Common Lisp collections as other programming language.
 
 - array type
+  - vectors
+  - arrays
+  - lists
+  - tuples
 - key-value type
+  - hash tables
+  - associative arrays
+  - maps
+  - dictionaries
 
 No matter what collection is used, I think, the important thing is CRUD in a real world. For example, how to create a *vector* in Common Lisp? how to access an element? Is it same memory structure like C? Is there any build-in functions to maange those?
 
-## array type collection
-- vector
-- list
-- tuple
-
-### vector
+## vector
 ***vector*** in Common Lisp can be *fixed-size* and also *resizable*.
 Fixed-size vector is like a C-style language's array.
 ```c
@@ -43,7 +46,7 @@ void main() {
 }
 ```
 
-### Creation
+### Vector Creation
 
 There are three ways of creating a *vector*.
 
@@ -145,8 +148,22 @@ CL-USER> (elt vec 0)                 ; access the first element
 ### tuple
 
 
-## key-value type collection
-- hash table
-- associative array
-- map
-- dictionary
+## Hash Table
+
+
+### make-hash-table
+- syntax
+  - **make-hash-table** *&key test size rehash-size rehash-threshold* => ***hash-table***
+```lisp
+(defparameter *h* (make-hash-table))
+;; #S(HASH-TABLE :TEST FASTHASH-EQL)
+```
+
+### gethash
+- syntax
+  - **gethash** key hash-table *&optional default* => ***value, present-p***
+```lisp
+(gethash 'a *h*)  ; NIL
+(setf (gethash 'a *h*) 12)  ; 12
+(gethash 'a *h*)  ; 12
+```
