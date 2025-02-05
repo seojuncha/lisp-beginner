@@ -1,4 +1,4 @@
-#!/usr/bin/env clisp
+#!/usr/bin/sbcl --script
 
 (defun add (n1 n2)
  (+ n1 n2)

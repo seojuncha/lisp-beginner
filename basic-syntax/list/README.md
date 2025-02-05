@@ -55,23 +55,6 @@
 ;; NIL
 ```
 
-## dolist
-- description
-  - looping a **list** object, produces a new list.
-- type
-  - macro
-- syntax
-  - **dolist**  (var list-form [result-form]) declaration* {tag | statement}*
-=> result*
-
-```lisp
-(defvar *data* (list 1 2 3))
-;; var = d
-;; list-form = *data*
-(dolist (d *data*) (format t "~A~%" d))
-
-(dolist (d '(a b c)) (format t "~A~&" d))
-```
 
 ## remove-if, remove-if-not
 - description
