@@ -29,6 +29,7 @@
               - var [type-spec] in form1 [by step-fun]
             - for-as-on-list
             - for-as-equals-then 
+              - var [type-spec] = form1 [then form2]
             - for-as-across
             - for-as-hash
             - for-as-package
