@@ -1,23 +1,23 @@
 ;; base class; person
 (defclass person ()
-  ((name
-    :initarg :name
-    :initform "unkonwn")
-   (age
-    :initarg :age
-    :initform 0)))
+    ((name
+      :initarg :name
+      :initform "unkonwn")
+     (age
+      :initarg :age
+      :initform 0)))
 
 ;; subclass of person; baby
 (defclass baby (person)
-  ((parent
-    :initarg :parent
-    :initform (error "baby should have a parent!"))))
+    ((parent
+      :initarg :parent
+      :initform (error "baby should have a parent!"))))
 
 ;; subclass of person; student
 (defclass student (person)
-  ((school
-    :initarg :school
-    :initform 'preschool)))
+    ((school
+      :initarg :school
+      :initform 'preschool)))
 
 (defparameter *p* (make-instance 'person :name "seojun" :age 30))
 (defparameter *b* (make-instance 'baby :name "mimi" :parent *p*))

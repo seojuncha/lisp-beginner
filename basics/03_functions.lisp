@@ -9,7 +9,7 @@
 
 
 (defun plus-one (val)
-  (+ val 1))  ; last evaluated form is returned
+  (+ val 1)) ; last evaluated form is returned
 (format t "4 + 1 = ~a~%" (plus-one 4))
 
 ;;; optional parameters
@@ -40,6 +40,6 @@
 (defun ret-func ()
   (format t "before return~%")
   (return-from ret-func (+ 1 1))
-  (format t "after return~%"))  ; never reached
+  (format t "after return~%")) ; never reached
 
 (format t "return from: ~a~%" (ret-func))

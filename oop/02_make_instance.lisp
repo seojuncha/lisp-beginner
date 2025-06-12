@@ -1,24 +1,22 @@
 ;;; make-instance with slots
 
 (defclass person ()
-  ((name
-    :initarg :name
-    :initform "unkonwn")
-   (age
-    :initarg :age
-    :initform 0)))
-
- 
+    ((name
+      :initarg :name
+      :initform "unkonwn")
+     (age
+      :initarg :age
+      :initform 0)))
 
 (defparameter unknown-person
-  (make-instance 'person))
+              (make-instance 'person))
 
 (format t "unkown person's name: ~s~%" (slot-value unknown-person 'name))
 
 (defparameter p1
-  (make-instance 'person
-     :name "seojun"
-     :age 30))
+              (make-instance 'person
+                :name "seojun"
+                :age 30))
 
 ;; print the slot value
 (format t "person's name: ~s~%" (slot-value p1 'name))

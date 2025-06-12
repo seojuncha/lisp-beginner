@@ -2,9 +2,9 @@
 ;;; what is the closure?
 
 (defparameter *fn*
-  (let ((my-count 0))  ; variable, my-count, is lexical binding.
-    (defun foo ()      ; define a funciton
-      (incf my-count))))
+              (let ((my-count 0)) ; variable, my-count, is lexical binding.
+                (defun foo () ; define a funciton
+                  (incf my-count))))
 
 (format t "~a~%" (find-symbol "FOO"))
 (format t "~a~%" (function foo))
@@ -22,8 +22,8 @@
 
 ;;; okay. foo is needed yet?? I think, not.
 (defparameter *foofn*
-  (let ((my-count 0))
-    #'(lambda () (incf my-count))))
+              (let ((my-count 0))
+                #'(lambda () (incf my-count))))
 
 (format t "foofn: ~a~%" *foofn*)
 (format t "foofn: ~a~%" (funcall *foofn*))
@@ -31,11 +31,11 @@
 (format t "foofn: ~a~%" (funcall *foofn*))
 
 (defparameter *boofn*
-  (defun boo ()
-    (let ((v 0))
-      (incf v)
-      (when (= v 5) (setq v 0)))))
- 
+              (defun boo ()
+                (let ((v 0))
+                  (incf v)
+                  (when (= v 5) (setq v 0)))))
+
 
 (format t "~a~%" *boofn*)
 (format t "what is boofn?: ~a~%" (type-of *boofn*))

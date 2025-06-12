@@ -12,9 +12,9 @@
 
 ;; now, define a person class
 (defclass person ()
-  ((name
-    :initarg :name
-    :initform "unknown")))
+    ((name
+      :initarg :name
+      :initform "unknown")))
 
 ;; use with a specifier
 (defmethod hello ((who person))

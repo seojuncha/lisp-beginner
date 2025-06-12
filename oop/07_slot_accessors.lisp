@@ -1,22 +1,22 @@
 ;;; slot accessor
 
 (defclass person ()
-  ((name
-    :initarg :name
-    :initform "unknown"
-    :accessor get-name)
-   (age
-    :initarg :age
-    :initform 0
-    :accessor age)
-   (parent
-    :initarg :parent
-    :initform "whois"
-    :reader get-parent)
-   (has-parent
-    :initform "yes, I have"
-    :accessor has-parent
-    :allocation :class)))
+    ((name
+      :initarg :name
+      :initform "unknown"
+      :accessor get-name)
+     (age
+      :initarg :age
+      :initform 0
+      :accessor age)
+     (parent
+      :initarg :parent
+      :initform "whois"
+      :reader get-parent)
+     (has-parent
+      :initform "yes, I have"
+      :accessor has-parent
+      :allocation :class)))
 
 ;(defparameter *p* (make-instance 'person :name "seojun" :age 30 :parent "im"))
 (defparameter *p* (make-instance 'person :name "seojun"))
@@ -46,7 +46,7 @@
 (format t "using with-accessor~%")
 (with-accessors ((age age)
                  (has-parent has-parent))
-                *p*
+    *p*
   (setf (has-parent *p*) "cool"))
 
 (format t "has parent? ~a~%" (has-parent *p*))

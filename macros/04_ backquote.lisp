@@ -25,7 +25,7 @@
 (defmacro foo (exp &body body)
   `(let ((x ,exp))
      (when x
-       ,@body)))  ; ,body is illegal!
+           ,@body))) ; ,body is illegal!
 
 (format t "~%~a~%" (macroexpand-1 '(foo (< 2 3) (format t "true when~%"))))
 

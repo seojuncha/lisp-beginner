@@ -36,7 +36,7 @@
 
 ;; (0 1 A) -> Symbol B couldn't be pushed.
 (defparameter *adj-vec*
-  (make-array 3 :fill-pointer 0
+              (make-array 3 :fill-pointer 0
                 :adjustable t))
 
 (vector-push 'a *adj-vec*)
@@ -51,11 +51,11 @@
 
 ;; make a string vector
 (defparameter *str-vec*
-  (make-array 5
-    :initial-element nil
-    :fill-pointer 0
-    :adjustable t
-    :element-type 'chracter))
+              (make-array 5
+                :initial-element nil
+                :fill-pointer 0
+                :adjustable t
+                :element-type 'chracter))
 
 (format t "initial string vector: ~a~%" *str-vec*)
 

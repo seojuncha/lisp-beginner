@@ -3,14 +3,14 @@
 
 ;; first define two classes
 (defclass person ()
-  ((name
-    :initarg :name
-    :initform "unkown")))
+    ((name
+      :initarg :name
+      :initform "unkown")))
 
 (defclass student (person)
-  ((school
-    :initarg :school
-    :initform "unknown")))
+    ((school
+      :initarg :school
+      :initform "unknown")))
 
 (defparameter *p* (make-instance 'person :name "seojun"))
 (defparameter *s* (make-instance 'student :name "elly" :school "chocolate"))
@@ -23,7 +23,7 @@
 
 (defmethod hello ((obj student))
   (format t "hello student ~a~%" (slot-value *s* 'name))
-  (call-next-method))  ; call-next-method call parent's method if available.
+  (call-next-method)) ; call-next-method call parent's method if available.
 
 (hello *p*)
 (hello *s*)
@@ -50,7 +50,7 @@
 (defmethod hello :around ((obj student))
   (format t "greet person!~%")
   (when (next-method-p)
-    (call-next-method)))
+        (call-next-method)))
 
 (format t "~%  >> around person~%")
 (hello *p*)
